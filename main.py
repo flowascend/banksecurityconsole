@@ -13,8 +13,6 @@ def get_card_data(i: int, all_passcards: QuerySet[Passcard]) -> tuple[bool, date
 
 if __name__ == '__main__':
     all_passcards = Passcard.objects.all()
-    print('All passcards:', all_passcards)  # noqa: T001
-    print('Passcard #1:', get_card_data(0, all_passcards))  # noqa: T001
     active_passcards = Passcard.objects.filter(is_active=True)
     print('Passcards amount:', Passcard.objects.count())  # noqa: T001
     print('Active passcards amount:', len(active_passcards))  # noqa: T001
